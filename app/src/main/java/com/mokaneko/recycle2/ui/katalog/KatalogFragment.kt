@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.mokaneko.recycle2.databinding.FragmentHomeBinding
+import com.mokaneko.recycle2.databinding.FragmentKatalogBinding
 
 class KatalogFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentKatalogBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,10 +25,10 @@ class KatalogFragment : Fragment() {
         val katalogViewModel =
             ViewModelProvider(this).get(KatalogViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentKatalogBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
+        val textView: TextView = binding.textKatalog
         katalogViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
